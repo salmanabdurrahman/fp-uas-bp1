@@ -19,7 +19,7 @@ abstract class ATM : OperasiATM {
 class Transfer : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
-        println("║                        PT BANK AMIKOM                        ║")
+        println("║                         PT BANK UNGU                         ║")
         println("╠══════════════════════════════════════════════════════════════╣")
         println("║                           TRANSFER                           ║")
         println("╚══════════════════════════════════════════════════════════════╝")
@@ -75,7 +75,7 @@ class Transfer : ATM() {
 class Menabung : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
-        println("║                        PT BANK AMIKOM                        ║")
+        println("║                         PT BANK UNGU                         ║")
         println("╠══════════════════════════════════════════════════════════════╣")
         println("║                          SETOR TUNAI                         ║")
         println("╚══════════════════════════════════════════════════════════════╝")
@@ -105,7 +105,7 @@ class Menabung : ATM() {
 class Penarikan : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
-        println("║                       PT BANK AMIKOM                         ║")
+        println("║                        PT BANK UNGU                          ║")
         println("╠══════════════════════════════════════════════════════════════╣")
         println("║                         PENARIKAN                            ║")
         println("╚══════════════════════════════════════════════════════════════╝")
@@ -118,9 +118,9 @@ class Penarikan : ATM() {
     override fun jalankan() {
         tampilkanJudul()
         println("─────────────── PILIH JUMLAH PAKET TUNAI PENARIKAN ─────────────")
-        println("\t1. Rp50.000\t\t    2. Rp100.000")
-        println("\t3. Rp200.000\t\t4. Rp1.500.000")
-        println("\t5. Rp300.000\t\t6. Rp2.000.000")
+        println("\t\t\t1. Rp50.000\t\t    2. Rp100.000")
+        println("\t\t\t3. Rp200.000\t\t4. Rp1.500.000")
+        println("\t\t\t5. Rp300.000\t\t6. Rp2.000.000")
         println("────────────────────────────────────────────────────────────────")
         print("Masukkan pilihan: ")
         val paket = arrayOf(50000, 100000, 200000, 1500000, 300000, 2000000)
@@ -154,7 +154,7 @@ class Penarikan : ATM() {
 class Saldo : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
-        println("║                       PT BANK AMIKOM                         ║")
+        println("║                        PT BANK UNGU                          ║")
         println("╠══════════════════════════════════════════════════════════════╣")
         println("║                           SALDO                              ║")
         println("╚══════════════════════════════════════════════════════════════╝")
@@ -178,10 +178,11 @@ class Saldo : ATM() {
 class Informasi : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
-        println("║                       PT BANK AMIKOM                         ║")
+        println("║                        PT BANK UNGU                          ║")
         println("╠══════════════════════════════════════════════════════════════╣")
         println("║                     INFORMASI KELOMPOK                       ║")
         println("╚══════════════════════════════════════════════════════════════╝")
+        println("|====|=========|==========================|==============|===================|===============|")
         println("| No |   PIN   |     Nama                 |    NIM       |   Prodi           |     Saldo     |")
         println("|====|=========|==========================|==============|===================|===============|")
     }
@@ -193,10 +194,11 @@ class Informasi : ATM() {
     override fun jalankan() {
         tampilkanJudul()
         val anggota = arrayOf(
-            arrayOf("1", "123456", "Rama Danadipa     ", "23.12.2956", "Sistem Informasi", saldo.toString()),
-            arrayOf("2", "123456", "Salman Abdurrahman", "23.12.2961", "Sistem Informasi", saldo.toString()),
-            arrayOf("3", "123456", "Wisnu Fadhillah   ", "23.12.2952", "Sistem Informasi", saldo.toString()),
-            arrayOf("4", "123456", "Rizki Maulana     ", "23.12.2940", "Sistem Informasi", saldo.toString())
+            arrayOf("1", "123456", "Fachriza Prima    ", "23.12.2958", "Sistem Informasi", saldo.toString()),
+            arrayOf("2", "123456", "Wahyu Nugroho     ", "23.12.2959", "Sistem Informasi", saldo.toString()),
+            arrayOf("3", "123456", "Nabil Yudhistira  ", "23.12.2960", "Sistem Informasi", saldo.toString()),
+            arrayOf("4", "123456", "Salman Abdurrahman", "23.12.2961", "Sistem Informasi", saldo.toString()),
+            arrayOf("5", "123456", "Zidan Zaidan      ", "23.12.2962", "Sistem Informasi", saldo.toString()),
         )
         for (anggota in anggota) {
             println("| ${anggota[0]}  | ${anggota[1]}  | ${anggota[2]}       | ${anggota[3]}   | ${anggota[4]}  |  ${anggota[5]}   \t |")
@@ -213,28 +215,41 @@ fun tampilkanMenu() {
     println("╔══════════════════════════════════════════════════════════════╗")
     println("║                          PILIH MENU                          ║")
     println("╠══════════════════════════════════════════════════════════════╣")
-    println("║ 1. Transfer Uang               4. Informasi Kelompok         ║")
-    println("║ 2. Menabung                    5. Informasi Saldo            ║")
-    println("║ 3. Penarikan Uang              6. Keluar                     ║")
+    println("║     1. Transfer Uang               4. Informasi Kelompok     ║")
+    println("║     2. Menabung                    5. Informasi Saldo        ║")
+    println("║     3. Penarikan Uang              6. Keluar                 ║")
     println("╚══════════════════════════════════════════════════════════════╝")
 }
 
 fun main() {
     val scanner = Scanner(System.`in`)
     var keluar = false
+    var pinVerified = false
+
     while (!keluar) {
-        println("╔════════════════════════════════════════════════════════════════╗")
-        println("║              FINAL PROJECT PEMROGRAMAN TERSTRUKTUR             ║")
-        println("║                       MESIN ATM SEDERHANA                      ║")
-        println("╠════════════════════════════════════════════════════════════════╣")
-        println("║####################  Welcome to ATM Amikom   ##################║")
-        println("║                          Kelompok YTTA                         ║")
-        println("║                         PIN Anda 123456                        ║")
-        println("║############## @Amikom/Prodi_Sistem_Informasi/2024 #############║")
-        println("╚════════════════════════════════════════════════════════════════╝")
-        print("Masukkan PIN Anda: ")
-        val pin = scanner.nextInt()
-        if (pin == 123456) {
+        if (!pinVerified) {
+            println("╔════════════════════════════════════════════════════════════════╗")
+            println("║                FINAL PROJECT BAHASA PEMROGRAMAN 1              ║")
+            println("║                       MESIN ATM SEDERHANA                      ║")
+            println("╠════════════════════════════════════════════════════════════════╣")
+            println("║                       Welcome to ATM Ungu                      ║")
+            println("║                        Kelompok Delapan                        ║")
+            println("║                         PIN Anda 123456                        ║")
+            println("╚════════════════════════════════════════════════════════════════╝")
+            print("Masukkan PIN Anda: ")
+            val pin = scanner.nextInt()
+            if (pin == 123456) {
+                pinVerified = true
+            } else {
+                println("╔══════════════════════════════════════════════════════════════╗")
+                println("║              MAAF PIN YANG ANDA MASUKAN SALAH                ║")
+                println("║           SILAHKAN ULANGI DAN PERIKSA PIN ANDA               ║")
+                println("║                        TERIMAKASIH                           ║")
+                println("╚══════════════════════════════════════════════════════════════╝")
+            }
+        }
+
+        if (pinVerified) {
             var pilihan: Int
             do {
                 tampilkanMenu()
@@ -247,7 +262,9 @@ fun main() {
                     4 -> Informasi()
                     5 -> Saldo()
                     6 -> {
-                        println("Terima kasih telah menggunakan layanan kami!")
+                        println("╔══════════════════════════════════════════════════════════════════╗")
+                        println("║       Terima Kasih Telah Menggunakan Mesin ATM Ungu Kami...      ║")
+                        println("╚══════════════════════════════════════════════════════════════════╝")
                         keluar = true
                         break
                     }
@@ -257,13 +274,7 @@ fun main() {
                     }
                 }
                 operasi.jalankan()
-            } while (pilihan != 5)
-        } else {
-            println("╔══════════════════════════════════════════════════════════════╗")
-            println("║              MAAF PIN YANG ANDA MASUKAN SALAH                ║")
-            println("║           SILAHKAN ULANGI DAN PERIKSA PIN ANDA               ║")
-            println("║                        TERIMAKASIH                           ║")
-            println("╚══════════════════════════════════════════════════════════════╝")
+            } while (pilihan in 1..5)
         }
     }
 }
