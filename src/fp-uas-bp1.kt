@@ -1,21 +1,21 @@
 import java.util.Scanner
 
-// Variabel global
+// Variabel global untuk menyimpan saldo
 var saldo: Int = 1000000
 
-// Antarmuka untuk operasi ATM
+// Antarmuka untuk operasi ATM (POLYMORPHISM & INTERFACE)
 interface OperasiATM {
-    fun jalankan()
+    fun jalankan() // Fungsi abstrak yang harus diimplementasikan oleh kelas yang mengimplementasikan interface ini
 }
 
-// Kelas abstrak untuk properti umum
+// Kelas abstrak untuk properti umum (INHERITANCE, CLASS & OBJECT)
 abstract class ATM : OperasiATM {
-    protected val scanner = Scanner(System.`in`)
-    abstract fun tampilkanJudul()
-    abstract fun tampilkanFooter()
+    protected val scanner = Scanner(System.`in`) // Menggunakan modifier protected agar bisa diakses oleh kelas turunan
+    abstract fun tampilkanJudul() // Fungsi abstrak untuk menampilkan judul, harus diimplementasikan oleh kelas turunan
+    abstract fun tampilkanFooter() // Fungsi abstrak untuk menampilkan footer, harus diimplementasikan oleh kelas turunan
 }
 
-// Kelas Transfer yang mewarisi ATM
+// Kelas Transfer yang mewarisi ATM (INHERITANCE)
 class Transfer : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
@@ -29,7 +29,7 @@ class Transfer : ATM() {
         println("╚══════════════════════════════════════════════════════════════╝")
     }
 
-    override fun jalankan() {
+    override fun jalankan() { // Mengimplementasikan fungsi dari antarmuka (INTERFACE)
         tampilkanJudul()
         print("Masukkan Nama Pemilik Rekening: ")
         val nama = scanner.next()
@@ -71,7 +71,7 @@ class Transfer : ATM() {
     }
 }
 
-// Kelas Menabung yang mewarisi ATM
+// Kelas Menabung yang mewarisi ATM (INHERITANCE)
 class Menabung : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
@@ -101,7 +101,7 @@ class Menabung : ATM() {
     }
 }
 
-// Kelas Penarikan yang mewarisi ATM
+// Kelas Penarikan yang mewarisi ATM (INHERITANCE, ARRAY & COLLECTIONS)
 class Penarikan : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
@@ -123,7 +123,7 @@ class Penarikan : ATM() {
         println("\t\t\t5. Rp300.000\t\t6. Rp2.000.000")
         println("────────────────────────────────────────────────────────────────")
         print("Masukkan pilihan: ")
-        val paket = arrayOf(50000, 100000, 200000, 1500000, 300000, 2000000)
+        val paket = arrayOf(50000, 100000, 200000, 1500000, 300000, 2000000) // Menggunakan array untuk pilihan penarikan
         val pilihan = scanner.nextInt()
         println("────────────────────────────────────────────────────────────────")
         if (pilihan in 1..6) {
@@ -150,7 +150,7 @@ class Penarikan : ATM() {
     }
 }
 
-// Kelas Saldo yang mewarisi ATM
+// Kelas Saldo yang mewarisi ATM (INHERITANCE)
 class Saldo : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
@@ -174,7 +174,7 @@ class Saldo : ATM() {
     }
 }
 
-// Kelas Informasi yang mewarisi ATM
+// Kelas Informasi yang mewarisi ATM (INHERITANCE, ARRAY & COLLECTIONS)
 class Informasi : ATM() {
     override fun tampilkanJudul() {
         println("╔══════════════════════════════════════════════════════════════╗")
@@ -193,12 +193,12 @@ class Informasi : ATM() {
 
     override fun jalankan() {
         tampilkanJudul()
-        val anggota = arrayOf(
+        val anggota = arrayOf( // Menggunakan array untuk menyimpan data anggota
             arrayOf("1", "123456", "Fachriza Prima    ", "23.12.2958", "Sistem Informasi", saldo.toString()),
             arrayOf("2", "123456", "Wahyu Nugroho     ", "23.12.2959", "Sistem Informasi", saldo.toString()),
             arrayOf("3", "123456", "Nabil Yudhistira  ", "23.12.2960", "Sistem Informasi", saldo.toString()),
             arrayOf("4", "123456", "Salman Abdurrahman", "23.12.2961", "Sistem Informasi", saldo.toString()),
-            arrayOf("5", "123456", "Zidan Zaidan      ", "23.12.2962", "Sistem Informasi", saldo.toString()),
+            arrayOf("5", "123456", "Zidan Zaidan      ", "23.12.2962", "Sistem Informasi", saldo.toString())
         )
         for (anggota in anggota) {
             println("| ${anggota[0]}  | ${anggota[1]}  | ${anggota[2]}       | ${anggota[3]}   | ${anggota[4]}  |  ${anggota[5]}   \t |")
@@ -210,7 +210,7 @@ class Informasi : ATM() {
     }
 }
 
-// Fungsi untuk menampilkan menu utama
+// Fungsi untuk menampilkan menu utama (FUNCTION)
 fun tampilkanMenu() {
     println("╔══════════════════════════════════════════════════════════════╗")
     println("║                          PILIH MENU                          ║")
@@ -221,12 +221,13 @@ fun tampilkanMenu() {
     println("╚══════════════════════════════════════════════════════════════╝")
 }
 
+// Fungsi utama (FUNCTION)
 fun main() {
     val scanner = Scanner(System.`in`)
     var keluar = false
     var pinVerified = false
 
-    while (!keluar) {
+    while (!keluar) { // Menggunakan while loop untuk terus menjalankan program hingga pengguna memilih untuk keluar
         if (!pinVerified) {
             println("╔════════════════════════════════════════════════════════════════╗")
             println("║                FINAL PROJECT BAHASA PEMROGRAMAN 1              ║")
@@ -255,7 +256,7 @@ fun main() {
                 tampilkanMenu()
                 print("Masukkan pilihan: ")
                 pilihan = scanner.nextInt()
-                val operasi: OperasiATM = when (pilihan) {
+                val operasi: OperasiATM = when (pilihan) { // Menggunakan polimorfisme untuk memilih operasi ATM
                     1 -> Transfer()
                     2 -> Menabung()
                     3 -> Penarikan()
@@ -273,7 +274,7 @@ fun main() {
                         continue
                     }
                 }
-                operasi.jalankan()
+                operasi.jalankan() // Memanggil fungsi jalankan dari operasi yang dipilih
             } while (pilihan in 1..5)
         }
     }
