@@ -1,4 +1,3 @@
-```markdown
 # Program ATM Sederhana
 
 ## Tujuan
@@ -31,13 +30,13 @@ Program ini ditulis dalam bahasa Kotlin dan menggunakan konsep-konsep Object-Ori
 
 ## Materi yang Digunakan
 
-1. Polymorphism: Program ini menggunakan polymorphism dengan mendefinisikan interface `OperasiATM` dan mengimplementasikan fungsi `jalankan()` di kelas-kelas turunan.
-2. Interface: Interface `OperasiATM` digunakan untuk mendefinisikan operasi dasar yang harus diimplementasikan oleh setiap kelas operasi ATM.
-3. Inheritance: Kelas `ATM` adalah kelas abstrak yang diwarisi oleh kelas-kelas `Transfer`, `Menabung`, `Penarikan`, `Saldo`, dan `Informasi`.
-4. Class & Object: Program ini menggunakan kelas dan objek untuk merepresentasikan berbagai operasi ATM.
-5. Visibility Modifiers: Modifier `protected` digunakan dalam kelas `ATM` untuk memungkinkan akses oleh kelas-kelas turunan.
-6. Array & Collections: Array digunakan dalam kelas `Penarikan` dan `Informasi` untuk menyimpan dan mengelola data.
-7. Function: Program ini menggunakan berbagai fungsi untuk mendefinisikan logika program, termasuk fungsi `tampilkanMenu()` dan `main()`.
+1. **Polymorphism**: Program ini menggunakan polymorphism dengan mendefinisikan interface `OperasiATM` dan mengimplementasikan fungsi `jalankan()` di kelas-kelas turunan.
+2. **Interface**: Interface `OperasiATM` digunakan untuk mendefinisikan operasi dasar yang harus diimplementasikan oleh setiap kelas operasi ATM.
+3. **Inheritance**: Kelas `ATM` adalah kelas abstrak yang diwarisi oleh kelas-kelas `Transfer`, `Menabung`, `Penarikan`, `Saldo`, dan `Informasi`.
+4. **Class & Object**: Program ini menggunakan kelas dan objek untuk merepresentasikan berbagai operasi ATM.
+5. **Visibility Modifiers**: Modifier `protected` digunakan dalam kelas `ATM` untuk memungkinkan akses oleh kelas-kelas turunan.
+6. **Array & Collections**: Array digunakan dalam kelas `Penarikan` dan `Informasi` untuk menyimpan dan mengelola data.
+7. **Function**: Program ini menggunakan berbagai fungsi untuk mendefinisikan logika program, termasuk fungsi `tampilkanMenu()` dan `main()`.
 
 ## Cara Menjalankan Program
 
@@ -45,16 +44,15 @@ Program ini ditulis dalam bahasa Kotlin dan menggunakan konsep-konsep Object-Ori
 2. Buat file dengan nama `ATM.kt` dan salin kode program di bawah ini ke dalam file tersebut.
 3. Buka terminal dan arahkan ke direktori tempat file `ATM.kt` berada.
 4. Jalankan perintah berikut untuk mengompilasi program:
-```
 
+```
 kotlinc ATM.kt -include-runtime -d ATM.jar
-
 ```
+
 5. Jalankan program dengan perintah berikut:
-```
 
+```
 java -jar ATM.jar
+```
 
-```
 Selamat menggunakan Program ATM Sederhana ini!
-```
